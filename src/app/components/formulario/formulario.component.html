@@ -1,0 +1,73 @@
+<div class="container mt-3">
+    <div class="card mt-3" >
+        <h1>Registrar empleado</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="empleadosForm">
+            <div class="mb-4">
+                <label for="name" class="form-label">Cedula</label>
+                <input class="form-control" type="number" class="form-control" id="id" name="id" required
+                    formControlName="id">
+                <div *ngIf="empleadosForm.get('id')?.touched && empleadosForm.get('id')?.errors?.['required']"
+                    class="alert alert-danger">Este campo es obligatorio</div>
+                <div *ngIf="empleadosForm.get('id')?.touched && empleadosForm.get('id')?.errors?.['minlength']"
+                    class="alert alert-danger">La ceduala debe tener almenos
+                    {{ empleadosForm.get('id')?.errors?.['minlength']?.requiredLength}} caracteres.</div>
+            </div>
+            <div class="mb-4">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" name="name" required formControlName="name">
+                <div *ngIf="empleadosForm.get('name')?.touched && empleadosForm.get('name')?.errors?.['required']"
+                    class="alert alert-danger">Este campo es obligatorio</div>
+                <div *ngIf="empleadosForm.get('name')?.touched && empleadosForm.get('name')?.errors?.['minlength']"
+                    class="alert alert-danger">El nombre debe tener almenos
+                    {{ empleadosForm.get('name')?.errors?.['minlength']?.requiredLength}} caracteres.</div>
+            </div>
+            <div class="mb-4">
+                <label for="name" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" required
+                    formControlName="lastName">
+                <div *ngIf="empleadosForm.get('lastName')?.touched && empleadosForm.get('lastName')?.errors?.['required']"
+                    class="alert alert-danger">Este campo es obligatorio</div>
+                <div *ngIf="empleadosForm.get('lastName')?.touched && empleadosForm.get('lastName')?.errors?.['minlength']"
+                    class="alert alert-danger">El apellido dee tener almenos
+                    {{ empleadosForm.get('lastName')?.errors?.['minlength']?.requiredLength}} caracteres.</div>
+            </div>
+            <div class="mb-4">
+                <label for="phone" class="form-label">Telefono</label>
+                <input type="number" ondrop="return false;" class="form-control" id="phone" name="phone" required
+                    formControlName="phone">
+                <div *ngIf="empleadosForm.get('phone')?.touched && empleadosForm.get('phone')?.errors?.['required']"
+                    class="alert alert-danger">Este campo es obligatorio.</div>
+            </div>
+            <div class="mb-4">
+                <label for="adress" class="form-label">Dirección</label>
+                <input type="text" ondrop="return false;" class="form-control" id="adress" name="adress" required
+                    formControlName="adress">
+                <div *ngIf="empleadosForm.get('adress')?.touched && empleadosForm.get('adress')?.errors?.['required']"
+                    class="alert alert-danger">Este campo es obligatorio.</div>
+            </div>
+            <div class="mb-4">
+                <label for="department" class="form-label">Area</label>
+                <select name="department" id="department" class="form-select form-select-sm"
+                    formControlName="department">
+                    <option value="desarrollo">Desarrollo</option>
+                    <option value="automatizacion">Automatizacion</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="aprendiz">Aprendiz</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="form-label">Correo</label>
+                <input type="text" class="form-control" id="email" name="phone" required formControlName="email">
+                <div *ngIf="empleadosForm.get('email')?.touched && empleadosForm.get('email')?.errors?.['required']"
+                    class="alert alert-danger">Este campo es obligatorio.</div>
+                <div *ngIf="empleadosForm.get('email')?.touched && empleadosForm.get('email')?.errors?.['email']"
+                    class="alert alert-danger">email invalido
+                    {{ empleadosForm.get('email')?.errors?.['email']?.requiredLength}}.</div>
+            </div>
+            <div class="d-grid gap-2 col-4 float-end">
+                <button type="submit" class="btn btn-info btn-lg" [disabled]="empleadosForm.invalid">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+</div>

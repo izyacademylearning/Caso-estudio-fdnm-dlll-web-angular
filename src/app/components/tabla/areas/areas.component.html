@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-body">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSeleccionado"
+               type="radio" name="department" id="todos" value="Todos" (change)="radioChange()">
+            <label class="form-check-label" for="todos">Todos({{ todos }})</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSeleccionado"
+                type="radio" name="department" id="desarrollo" value="desarrollo" (change)="radioChange()">
+            <label class="form-check-label" for="femenino">Desarrollo({{ desarrollo }})</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSeleccionado"
+              type="radio" name="department" id="automatizacion" value="automatizacion" (change)="radioChange()">
+            <label class="form-check-label" for="masculino">Atomatizacion({{ automatizacion}})</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSeleccionado"
+              type="radio" name="department" id="ventas" value="ventas" (change)="radioChange()">
+            <label class="form-check-label" for="masculino">Ventas({{ ventas }})</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSeleccionado"
+              type="radio" name="department" id="aprendiz" value="aprendiz" (change)="radioChange()">
+            <label class="form-check-label" for="masculino">Aprendiz({{ aprendiz }})</label>
+          </div>
+    </div>
+</div>
